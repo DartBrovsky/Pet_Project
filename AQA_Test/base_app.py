@@ -5,7 +5,7 @@ class base_page:
 
     def __init__(self, driver):
         self.driver = driver
-        self.start_page_url =  "http://demowebshop.tricentis.com/"
+        self.start_page_url = "http://demowebshop.tricentis.com/"
 
     def find_element(self, locator, time=5):
         return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator),
