@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class search_result_page_locators():
 
-    locator_simple_computer_search_button = (By.CSS_SELECTOR, "a[href='/simple-computer']")
+    locator_simple_computer_search_button = (By.CSS_SELECTOR, "h2.product-title>a[href='/simple-computer']")
     locator_computer_add_to_cart_button = (By.CSS_SELECTOR, "input[value^=Add]")
     locator_log_out = (By.CSS_SELECTOR, "a[href='/logout']")
     locator_profile_button = (By.CSS_SELECTOR, "div.header-links>ul>li>a.account")
