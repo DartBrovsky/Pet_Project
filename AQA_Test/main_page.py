@@ -38,6 +38,13 @@ class go_to_profile_page(base_page):
         search_field = self.find_element(main_page_locators.locator_profile_button)
         search_field.click()
 
+class log_out(base_page):
+
+    def log_out(self):
+
+        search_field = self.find_element(main_page_locators.locator_log_out)
+        search_field.click()
+
 class go_to_search_result_page(base_page):
 
     def go_to_search_result_page(self):
