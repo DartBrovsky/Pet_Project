@@ -22,6 +22,18 @@ class log_in(base_page):
         search_field_3 = self.find_element(log_in_page_locators.locator_log_in_button)
         search_field_3.click()
 
+class invalid_password_log_in(base_page):
+
+    def invalid_password_log_in(self):
+        search_field_1 = self.find_element(log_in_page_locators.locator_email_input_field)
+        search_field_1.send_keys("look070907@gmail.com")
+
+        search_field_2 = self.find_element(log_in_page_locators.locator_password_input_field)
+        search_field_2.send_keys("dart")
+
+        search_field_3 = self.find_element(log_in_page_locators.locator_log_in_button)
+        search_field_3.click()
+
 class go_to_forgot_password_page(base_page):
 
     def go_to_forgot_password_page(self):
