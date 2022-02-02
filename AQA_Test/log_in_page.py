@@ -22,6 +22,20 @@ class log_in(base_page):
         search_field_3 = self.find_element(log_in_page_locators.locator_log_in_button)
         search_field_3.click()
 
+class log_in_with_changed_password(base_page):
+
+    def log_in_with_changed_password(self):
+
+        search_field_1 = self.find_element(log_in_page_locators.locator_email_input_field)
+        search_field_1.send_keys("look070907@gmail.com")
+
+        search_field_2 = self.find_element(log_in_page_locators.locator_password_input_field)
+        search_field_2.send_keys("dartdart")
+
+        search_field_3 = self.find_element(log_in_page_locators.locator_log_in_button)
+        search_field_3.click()
+
+
 class invalid_password_log_in(base_page):
 
     def invalid_password_log_in(self):
