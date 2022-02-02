@@ -31,6 +31,13 @@ class go_to_log_in(base_page):
         search_field = self.find_element(main_page_locators.locator_log_in)
         search_field.click()
 
+class go_to_profile_page(base_page):
+
+    def go_to_profile_page(self):
+
+        search_field = self.find_element(main_page_locators.locator_profile_button)
+        search_field.click()
+
 class go_to_search_result_page(base_page):
 
     def go_to_search_result_page(self):
