@@ -10,8 +10,8 @@ def test_log_in(browser):
 
     log_in_to_site = log_in_page(browser)
     local_login = "look070907@gmail.com"
-    password = "Dart_Brovsky"
+    password = "Dart_brovsky"
     log_in_to_site.log_in(local_login, password)
 
-    assert "look070907@gmail.com" in browser.page_source
+    assert "Log out" in browser.page_source
 
