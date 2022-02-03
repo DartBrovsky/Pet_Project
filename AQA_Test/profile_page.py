@@ -1,7 +1,7 @@
 from base_app import base_page
 from selenium.webdriver.common.by import By
 
-class profile_page_locators():
+class profile_page(base_page):
 
     locator_log_out = (By.CSS_SELECTOR, "a[href='/logout']")
     locator_profile_button = (By.CSS_SELECTOR, "div.header-links>ul>li>a.account")
@@ -31,40 +31,21 @@ class profile_page_locators():
     locator_confirm_password_entry = (By.CSS_SELECTOR, "input[name^=Confirm]")
     locator_change_password_confirm_button = (By.CSS_SELECTOR, "input[value^=Change]")
 
-class click_on_changing_password(base_page):
-
     def click_on_changing_password(self):
 
-        search_field = self.find_element(profile_page_locators.locator_change_password_button)
+        search_field = self.find_element(profile_page.locator_change_password_button)
         search_field.click()
 
-class change_password(base_page):
+    def change_password(self, pass_1, pass_2):
 
-    def change_password(self):
+        search_field_1 = self.find_element(profile_page.locator_old_password_entry)
+        search_field_1.send_keys(pass_1)
 
-        search_field_1 = self.find_element(profile_page_locators.locator_old_password_entry)
-        search_field_1.send_keys("Dart_brovsky")
+        search_field_2 = self.find_element(profile_page.locator_new_password_entry)
+        search_field_2.send_keys(pass_2)
 
-        search_field_2 = self.find_element(profile_page_locators.locator_new_password_entry)
-        search_field_2.send_keys("dartdart")
+        search_field_3 = self.find_element(profile_page.locator_confirm_password_entry)
+        search_field_3.send_keys(pass_2)
 
-        search_field_3 = self.find_element(profile_page_locators.locator_confirm_password_entry)
-        search_field_3.send_keys("dartdart")
-
-        search_field_4 = self.find_element(profile_page_locators.locator_change_password_confirm_button)
-        search_field_4.click()
-
-    # func for returning old password
-
-    def return_old_password(self):
-        search_field_1 = self.find_element(profile_page_locators.locator_old_password_entry)
-        search_field_1.send_keys("dartdart")
-
-        search_field_2 = self.find_element(profile_page_locators.locator_new_password_entry)
-        search_field_2.send_keys("Dart_brovsky")
-
-        search_field_3 = self.find_element(profile_page_locators.locator_confirm_password_entry)
-        search_field_3.send_keys("Dart_brovsky")
-
-        search_field_4 = self.find_element(profile_page_locators.locator_change_password_confirm_button)
+        search_field_4 = self.find_element(profile_page.locator_change_password_confirm_button)
         search_field_4.click()
