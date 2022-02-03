@@ -10,12 +10,13 @@ class log_in_page(base_page):
     locator_log_in_button = (By.CSS_SELECTOR, "input[class='button-1 login-button']")
     locator_remember_me_checkbox = (By.CSS_SELECTOR, "input#RememberMe")
 
-    def log_in(self):
+    def log_in(self, login, password):
+
         search_field_1 = self.find_element(log_in_page.locator_email_input_field)
-        search_field_1.send_keys("look070907@gmail.com")
+        search_field_1.send_keys(login)
 
         search_field_2 = self.find_element(log_in_page.locator_password_input_field)
-        search_field_2.send_keys("Dart_brovsky")
+        search_field_2.send_keys(password)
 
         search_field_3 = self.find_element(log_in_page.locator_log_in_button)
         search_field_3.click()
@@ -27,16 +28,6 @@ class log_in_page(base_page):
 
         search_field_2 = self.find_element(log_in_page.locator_password_input_field)
         search_field_2.send_keys("dartdart")
-
-        search_field_3 = self.find_element(log_in_page.locator_log_in_button)
-        search_field_3.click()
-
-    def invalid_password_log_in(self):
-        search_field_1 = self.find_element(log_in_page.locator_email_input_field)
-        search_field_1.send_keys("look070907@gmail.com")
-
-        search_field_2 = self.find_element(log_in_page.locator_password_input_field)
-        search_field_2.send_keys("dart")
 
         search_field_3 = self.find_element(log_in_page.locator_log_in_button)
         search_field_3.click()
