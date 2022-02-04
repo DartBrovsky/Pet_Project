@@ -46,6 +46,17 @@ class main_page(base_page):
         search_field_2 = self.find_element(main_page.locator_search_button)
         search_field_2.click()
 
+    def go_to_book_list_page(self):
+
+        search_field = self.find_element(main_page.locator_books_ref_button)
+        search_field.click()
+
+
+    def go_to_gift_list_page(self):
+
+        search_field = self.find_element(main_page.locator_giftcard_ref_button)
+        search_field.click()
+
 
 
 
