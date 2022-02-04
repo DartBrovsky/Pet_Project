@@ -1,7 +1,7 @@
 from base_app import base_page
 from selenium.webdriver.common.by import By
 
-class shopping_cart_page_locators():
+class shopping_cart_page(base_page):
 
     # Empty cart locators
     locator_log_out = (By.CSS_SELECTOR, "a[href='/logout']")
@@ -28,12 +28,10 @@ class shopping_cart_page_locators():
     locator_giftcard_entry_field = (By.CSS_SELECTOR, "input[name^=gift]")
     locator_giftcard_entry_button = (By.CSS_SELECTOR, "input[name^=applygift]")
 
-class remove_item_from_shopping_cart(base_page):
-
     def remove_item_from_shopping_cart(self):
 
-        search_field_1 = self.find_element(shopping_cart_page_locators.locator_remove_checkbox)
+        search_field_1 = self.find_element(shopping_cart_page.locator_remove_checkbox)
         search_field_1.click()
 
-        search_field_2 = self.find_element(shopping_cart_page_locators.locator_update_cart_button)
+        search_field_2 = self.find_element(shopping_cart_page.locator_update_cart_button)
         search_field_2.click()

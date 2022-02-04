@@ -1,7 +1,7 @@
 from base_app import base_page
 from selenium.webdriver.common.by import By
 
-class selected_item_page_locators():
+class selected_item_page(base_page):
 
     locator_log_out = (By.CSS_SELECTOR, "a[href='/logout']")
     locator_profile_button = (By.CSS_SELECTOR, "div.header-links>ul>li>a.account")
@@ -22,19 +22,15 @@ class selected_item_page_locators():
     locator_add_to_compaire_list_button = (By.CSS_SELECTOR, "input[value$=list]")
     locator_another_item_page_button = (By.CSS_SELECTOR, "a[href='/141-inch-laptop']")
 
-class adding_to_cart(base_page):
-
     def adding_to_cart(self):
 
-        search_field_1 = self.find_element(selected_item_page_locators.locator_processor_select_radio)
+        search_field_1 = self.find_element(selected_item_page.locator_processor_select_radio)
         search_field_1.click()
 
-        search_field_2 = self.find_element(selected_item_page_locators.locator_add_to_cart_button)
+        search_field_2 = self.find_element(selected_item_page.locator_add_to_cart_button)
         search_field_2.click()
-
-class go_to_shopping_cart_page(base_page):
 
     def go_to_shopping_cart_page(self):
 
-        search_field = self.find_element(selected_item_page_locators.locator_shopping_cart)
+        search_field = self.find_element(selected_item_page.locator_shopping_cart)
         search_field.click()

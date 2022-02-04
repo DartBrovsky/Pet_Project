@@ -10,6 +10,8 @@ def test_search_item(browser):
 
     log_in_to_site = log_in_page(browser)
     log_in_to_site.log_in(local_login, password)
+
+    search_result_page = main_page(browser)
     search_result_page.go_to_search_result_page()
 
     assert "800" in browser.page_source

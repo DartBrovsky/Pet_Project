@@ -1,28 +1,28 @@
-from main_page import go_to_log_in
-from log_in_page import log_in
-from main_page import go_to_search_result_page
-from search_result_page import go_to_selected_item_page
-from selected_item_page import adding_to_cart
-from selected_item_page import go_to_shopping_cart_page
-from shopping_cart_page import remove_item_from_shopping_cart
+from main_page import main_page
+from log_in_page import log_in_page
+from search_result_page import search_result_page
+from selected_item_page import selected_item_page
+from shopping_cart_page import shopping_cart_page
+from special_info import *
 
 def test_remove_from_cart(browser):
+    open_main_page = main_page(browser)
+    open_main_page.get_start_page()
+    open_main_page.go_to_log_in_page()
 
-    go_log_in = go_to_log_in(browser)
-    log_in_to_site = log_in(browser)
-    doing_search = go_to_search_result_page(browser)
-    selected_item = go_to_selected_item_page(browser)
-    adding_cart = adding_to_cart(browser)
-    checking_cart = go_to_shopping_cart_page(browser)
-    remove_from_cart = remove_item_from_shopping_cart(browser)
+    log_in_to_site = log_in_page(browser)
+    log_in_to_site.log_in(local_login, password)
 
-    go_log_in.get_start_page()
-    go_log_in.go_to_log_in_page()
-    log_in_to_site.log_in()
-    doing_search.go_to_search_result_page()
-    selected_item.go_to_selected_item_page()
-    adding_cart.adding_to_cart()
-    checking_cart.go_to_shopping_cart_page()
-    remove_from_cart.remove_item_from_shopping_cart()
+    search_item_result_page = main_page(browser)
+    search_item_result_page.go_to_search_result_page()
 
-    assert  "Your Shopping Cart is empty!" in browser.page_source
+    go_to_item_page = search_result_page(browser)
+    go_to_item_page.go_to_selected_item_page()
+
+    selected_item = selected_item_page(browser)
+    selected_item.adding_to_cart()
+    selected_item.go_to_shopping_cart_page()
+
+    shopping_cart = shopping_cart_page(browser)
+    shopping_cart.remove_item_from_shopping_cart()
+    assert "Your Shopping Cart is empty!" in browser.page_source
