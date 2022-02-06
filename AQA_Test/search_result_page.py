@@ -1,7 +1,7 @@
-from base_app import base_page
+from base_app import BasePage
 from selenium.webdriver.common.by import By
 
-class search_result_page(base_page):
+class SearchResultPage(BasePage):
 
     locator_simple_computer_search_button = (By.CSS_SELECTOR, "h2.product-title>a[href='/simple-computer']")
     locator_computer_add_to_cart_button = (By.CSS_SELECTOR, "input[value^=Add]")
@@ -21,5 +21,5 @@ class search_result_page(base_page):
 
     def go_to_selected_item_page(self):
 
-        search_field = self.find_element(search_result_page.locator_simple_computer_search_button)
+        search_field = self.find_element(SearchResultPage.locator_simple_computer_search_button)
         search_field.click()

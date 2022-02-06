@@ -1,7 +1,7 @@
-from base_app import base_page
+from base_app import BasePage
 from selenium.webdriver.common.by import By
 
-class shopping_cart_page(base_page):
+class ShoppingCartPage(BasePage):
 
     # Empty cart locators
     locator_log_out = (By.CSS_SELECTOR, "a[href='/logout']")
@@ -30,8 +30,8 @@ class shopping_cart_page(base_page):
 
     def remove_item_from_shopping_cart(self):
 
-        search_field_1 = self.find_element(shopping_cart_page.locator_remove_checkbox)
+        search_field_1 = self.find_element(ShoppingCartPage.locator_remove_checkbox)
         search_field_1.click()
 
-        search_field_2 = self.find_element(shopping_cart_page.locator_update_cart_button)
+        search_field_2 = self.find_element(ShoppingCartPage.locator_update_cart_button)
         search_field_2.click()

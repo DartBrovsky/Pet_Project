@@ -1,7 +1,7 @@
-from base_app import base_page
+from base_app import BasePage
 from selenium.webdriver.common.by import By
 
-class profile_page(base_page):
+class ProfilePage(BasePage):
 
     locator_log_out = (By.CSS_SELECTOR, "a[href='/logout']")
     locator_profile_button = (By.CSS_SELECTOR, "div.header-links>ul>li>a.account")
@@ -33,19 +33,19 @@ class profile_page(base_page):
 
     def click_on_changing_password(self):
 
-        search_field = self.find_element(profile_page.locator_change_password_button)
+        search_field = self.find_element(ProfilePage.locator_change_password_button)
         search_field.click()
 
     def change_password(self, pass_1, pass_2):
 
-        search_field_1 = self.find_element(profile_page.locator_old_password_entry)
+        search_field_1 = self.find_element(ProfilePage.locator_old_password_entry)
         search_field_1.send_keys(pass_1)
 
-        search_field_2 = self.find_element(profile_page.locator_new_password_entry)
+        search_field_2 = self.find_element(ProfilePage.locator_new_password_entry)
         search_field_2.send_keys(pass_2)
 
-        search_field_3 = self.find_element(profile_page.locator_confirm_password_entry)
+        search_field_3 = self.find_element(ProfilePage.locator_confirm_password_entry)
         search_field_3.send_keys(pass_2)
 
-        search_field_4 = self.find_element(profile_page.locator_change_password_confirm_button)
+        search_field_4 = self.find_element(ProfilePage.locator_change_password_confirm_button)
         search_field_4.click()

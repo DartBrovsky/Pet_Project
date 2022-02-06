@@ -1,7 +1,7 @@
-from base_app import base_page
+from base_app import BasePage
 from selenium.webdriver.common.by import By
 
-class books_list_page(base_page):
+class BooksListPage(BasePage):
 
     locator_log_in = (By.CSS_SELECTOR, "a.ico-login")
     locator_register = (By.CSS_SELECTOR, "a.ico-register")
@@ -24,4 +24,4 @@ class books_list_page(base_page):
     locator_book_4 = (By.CSS_SELECTOR, "div.details>h2>a[href='/fiction-ex']")
     locator_book_5 = (By.CSS_SELECTOR, "div.details>h2>a[href='/health']")
     locator_book_6 = (By.CSS_SELECTOR, "div.details>h2>a[href='/science']")
-    
+

@@ -1,7 +1,7 @@
-from base_app import base_page
+from base_app import BasePage
 from selenium.webdriver.common.by import By
 
-class gift_card_list_page(base_page):
+class GiftCardListPage(BasePage):
 
     locator_log_in = (By.CSS_SELECTOR, "a.ico-login")
     locator_register = (By.CSS_SELECTOR, "a.ico-register")
